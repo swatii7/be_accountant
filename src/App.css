@@ -1,0 +1,21 @@
+body{
+  font-family: 'DM Sans', sans-serif !important;
+  color: #313133 !important;
+}
+
+
+.bg-red{
+  background-color: #E62F43 !important;
+}
+
+.text-dark{
+  color: #313133 !important;
+}
+
+.img-center{
+  text-align: -webkit-center !important;
+}
+
+.img-left{
+  text-align: -webkit-left !important;
+}
