@@ -2,46 +2,89 @@ import React,{Fragment, useState} from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Dialog, Transition } from '@headlessui/react'
 import logo from '../../../assets/logo.png'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
 
 
-    let Links =[
-        {name:"Home",link:"/"},
-        {name:"About Us",link:"/about"},
-        {name:"Service",link:"/service"},
-        {name:"FAQ",link:"/faq"},
-        {name:"Contact",link:"/contact"},
+    let navTabs =[
+        {id:1,
+          name:"Home",
+          link:"/"
+        },
+        {id:2,
+          name:"About Us",
+          link:"/aboutus"
+        },
+        {id:3,
+          name:"Service",
+          link:"/service"},
+        {name:"FAQ",link:"/faq"
+      },
+        {id:4,
+          name:"Contact",
+          link:"/contact"},
       ];
-      let [open, setOpen] =useState(false);
 
 
-  return (
+      const [open, setOpen] = useState(false);
+      const [activeLink, setActiveLink] = useState(null);
+      const [hoveredLinks, setHoveredLinks] = useState({});
     
-        <header className='w-full fixed top-0 left-0 lg:z-50'>
-           <div className='lg:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
-            {/* logo section */}
-            <div className='font-bold text-2xl cursor-pointer flex items-center gap-1'>
-                <span>
-                    <img src={logo} />
-                </span>
-            </div>
-            {/* Menu icon */}
-            <div onClick={()=>setOpen(!open)} className='absolute right-8 top-6 cursor-pointer lg:hidden w-7 h-7'>
-               
-                     <Bars3Icon />
-               
-            </div>
-            {/* linke items */}
-            <ul className={`hidden lg:flex md:items-center md:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in`}>
-                {
-                    Links.map((link,index) => (
-                    <li key={index} className='lg:ml-8 md:my-0 my-7 font-medium'>
-                       {/* <FontAwesomeIcon icon={faCaretDown} className='text-rose-500' /> */}
-                        <a href={link.link} className='hover:text-rose-500 duration-500 active:text-rose-500'>{link.name}</a>
-                    </li>))
+      const handleLinkClick = (linkName) => {
+        if (activeLink === linkName) {
+          setActiveLink(null);
+        } else {
+          setActiveLink(linkName);
+        }
+      };
+
+      const handleLinkHover = (linkId, isHovered) => {
+        setHoveredLinks((prevHoveredLinks) => ({
+          ...prevHoveredLinks,
+          [linkId]: isHovered,
+        }));
+      };
+
+
+      return (
+           <header className='w-full fixed top-0 left-0 lg:z-50'>
+      <div className='lg:flex items-center justify-between bg-white md:px-10 px-7'>
+        <div className='font-bold text-2xl cursor-pointer flex items-center py-4 gap-1'>
+          <span>
+            <img src={logo} alt="Logo" />
+          </span>
+        </div>
+        <div
+          onClick={() => setOpen(!open)}
+          className='absolute right-8 top-6 cursor-pointer lg:hidden w-7 h-7'
+        >
+          <Bars3Icon />
+        </div>
+        <ul
+          className={`hidden lg:flex md:items-center md:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in`}
+        >
+          {navTabs.map((link) => (
+            <li key={link.link} className='lg:ml-8 md:my-0 my-7 py-4 font-medium'>
+              <Link
+                to={link.link}
+                className={`duration-500 border-transparent py-[30px] relative  ${
+                  activeLink === link.name ? 'text-red-600 after:border-transparent after:border-t-red-600 after:border-[7px] after:top-0 after:left-[50%] after:translate-x-[-50%] after:absolute ' : ''
                 }
-            </ul>
+                ${
+                  hoveredLinks? 'hover:text-red-600 after:border-transparent hover:after:border-t-red-600 after:border-[7px] after:top-0 after:left-[50%] after:translate-x-[-50%] after:absolute  ': ''
+                }`}
+                onClick={() => handleLinkClick(link.name)}
+                onMouseEnter={() => handleLinkHover(link.id, true)}
+                onMouseLeave={() => handleLinkHover(link.id, false)}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+    
+    
          
            </div>
            <Transition.Root show={open} as={Fragment}>
@@ -97,10 +140,10 @@ function Navbar() {
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                     <ul>
                 {
-                    Links.map((link,index) => (
+                    navTabs.map((link,index) => (
                     <li key={index} className='lg:ml-8 lg:my-0 md:my-7 text-base md:text-3xl  font-semibold hover:text-rose-500'>
                        {/* <FontAwesomeIcon icon={faCaretDown} className='text-rose-500' /> */}
-                        <a href={link.link} className='hover:text-rose-500 duration-500'>{link.name}</a>
+                        <Link to={link.link} className='hover:text-rose-500 duration-500'>{link.name}</Link>
                     </li>))
                 }
             </ul>

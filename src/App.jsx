@@ -1,26 +1,25 @@
 
 import './App.css'
-import Navbar from './Components/CommonComponents/Navbar/Navbar'
 import Home from './Components/HomePageComponents/HomePage/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import About from './Components/AboutPage/AboutUs/About'
+import {  Route, Routes } from 'react-router-dom';
+import Layout from './Components/Layout/Layout';
 
 function App() {
   
 
   return (
    
+     
+    <Routes>
     
-    <BrowserRouter>
-      <Routes>
-        
-         <Route path="/" element={<Home />}>
-        
-         {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
-        </Route> 
-      </Routes>
-    </BrowserRouter>
+      <Route index element={<Home />} />
+      <Route path="/aboutus" element={<About />} />
+      {/* 
+      <Route path="contact" element={<Contact />} />
+      <Route path="*" element={<NoPage />} /> */}
+   
+  </Routes>
   )
 }
 
