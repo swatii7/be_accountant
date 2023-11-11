@@ -50,8 +50,7 @@ const cardArr= [
                 Tax optimalization
               </h1>
             </div>
-            {/* */}
-            {/*icon div*/}
+           
             <div className='hidden lg:block max-w-[90px] h-auto mt-10 bg-black text-white rounded-[50%]'>
               <ArrowSmallRightIcon className='xl:p-8 md:p-[20px] w-full ' />
             </div>

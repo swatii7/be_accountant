@@ -25,7 +25,7 @@ export default function Footer() {
   return (
    
     
-    <footer className="bg-[#EDF2F4] selection:bg-zinc-200 selection:text-black ">
+    <footer className="bg-[#EDF2F4] selection:bg-zinc-200 selection:text-black px-[30px] ">
       <div className='max-w-screen-xl mx-auto'>
 
      
@@ -34,7 +34,7 @@ export default function Footer() {
           <img src={logo} alt="Logo" />
           <p className="text-[#8d99ae]">Arcu sit venenatis lacinia dolor urna. Amet magna vulputate elit vestibulum ultrices. Viverra ultrices vel morbi sed tortor, lacus, dui id scelerisque.</p>
         </div>
-        <div className='text-left ml-[130px]'>
+        <div className='text-left md:ml-[130px]'>
           <h5 className='text-xl font-bold mb-4'>Address</h5>
           <ul className='mb-4'>
             {addressData.map((line, index) => (
@@ -42,7 +42,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className='text-left ml-[130px]'>
+        <div className='text-left md:ml-[130px]'>
           <h5 className='text-xl font-bold mb-4'>Opening hours</h5>
           <ul className='mb-4'>
             {openingHoursData.map((line, index) => (
@@ -58,14 +58,14 @@ export default function Footer() {
       <div className='pt-[30px] pb-10 border border-[#eaeaea] text-[#8d99ae]'>
 
 <div className='max-w-screen-xl mx-auto flex justify-around'>
-  <div>
+  <div className='order-2 md:order-1'>
   <p>© 2023 Betheme by
   <a href='https://muffingroup.com/'>Muffin group</a> 
   | All Rights Reserved | Powered by 
   <a href='https://wordpress.org'>WordPress</a>
   </p>
   </div>
-  <div className='bg-red-600 w-[45px] h-[50px] border-2 rounded-md'>
+  <div className='bg-red-600 w-[45px] h-[50px] border-2 rounded-md order-1 md:order-2'>
     <ChevronUpIcon onClick={scrollToTop} className='text-white w-[30px] mt-2 ml-[5px]' />
   </div>
 
