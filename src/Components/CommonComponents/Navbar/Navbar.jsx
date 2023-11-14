@@ -128,7 +128,7 @@ function Navbar() {
                     <ul>
                 {
                     navTabs.map((link,index) => (
-                    <li key={index} className='lg:ml-8 lg:my-0 md:my-7 text-base md:text-3xl  font-semibold hover:text-rose-500'>
+                    <li key={index} className='lg:ml-8 lg:my-0 md:my-7 text-base md:text-3xl  font-semibold hover:text-rose-500 pt-[11px] pr-[5px] pb-[10px] pl-[20px]'>
                        {/* <FontAwesomeIcon icon={faCaretDown} className='text-rose-500' /> */}
                         <Link to={link.link} 
                          className={`duration-500 border-transparent py-[30px] relative  ${
