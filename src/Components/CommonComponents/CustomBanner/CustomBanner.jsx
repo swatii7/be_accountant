@@ -6,16 +6,16 @@ export default function CustomBanner({title, heading, headingSpan, bgImage, imag
   return (
     <div>
        <div className='grid grid-cols-1 md:grid-cols-2 selection:bg-zinc-200 selection:text-black '>
-        <div className="bg-[#e62f43] text-white bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-section-bg1.png')] bg-center py-[50px] md:py-[100px] px-[50px] xl:px-[173px]">
+        <div className="text-center md:text-left bg-[#e62f43] text-white bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-section-bg1.png')] bg-center py-[50px] md:py-[100px] px-[35px] lg:px-[73px] xl:pl-[200px] xl:pr-[236px]">
 <div className='mb-[40px] mx-3 text-[17px] lg:text-xl font-bold'>
-    <h5>
+    <h5 className='lg:text-left lg:pl-[55px] '>
     {title}
     </h5>
 </div>
 <div className='md:mb-[40px] md:mx-3 leading-7 md:leading-[50px]'>
     <h2 className='text-[29px]  md:text-[41px] lg:text-5xl font-bold'>
     {heading}
-    <span className='text-black ml-2'>
+    <span className='text-black ml-2 md:ml-0 md:block xl:text-left xl:ml-[55px]'>
    {headingSpan}
     </span>
     </h2>
