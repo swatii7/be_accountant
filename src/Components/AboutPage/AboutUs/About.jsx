@@ -35,7 +35,14 @@ export default function About() {
 
   return (
     <section className='selection:bg-zinc-200 selection:text-black'>
-      <CustomBanner title='About us' heading='A tincidunt amet risus aenean leo' headingSpan='bibendum' image={cardImg} bgImage="bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-about-bg.webp')] bg-[top_center] bg-cover" />
+      <CustomBanner title='About us'
+       heading='A tincidunt amet risus aenean leo'
+        headingSpan='bibendum'
+         padding='py-[50px] md:py-[100px] px-[60px] lg:px-[73px] xl:px-[250px]'
+          image={cardImg}
+           bgImage="bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-about-bg.webp')] bg-[top_center] bg-cover"
+           spanClass='text-black ml-2 md:ml-0 md:block xl:text-left '
+            />
       <div className='grid grid-cols-1 md:grid-cols-2 pt-10 pb-[50px] md:pb-[100px] lg:max-w-7xl mx-auto px-[33px]'>
         <div className='md:mx-3 md:px-2'>
           <h3 className='text-[19px] lg:text-[32px] font-bold leading-[23px] lg:leading-[38px]'>

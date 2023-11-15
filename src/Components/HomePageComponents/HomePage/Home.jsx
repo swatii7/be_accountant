@@ -110,7 +110,7 @@ const cardArr= [
     </div>
     <div className='grid md:grid-cols-2 lg:grid-cols-3'>
       {cardArr.map((card,index) =>
-       <div className='select-none'>
+       <div key={index} className='select-none'>
        <Card imgSrc={card.image}
         heading={card.title}
          description={card.desc}
@@ -119,6 +119,7 @@ const cardArr= [
            cardClass='pt-4 md:pt-6 text-center md:text-left'
            padding='p-30 md:p-[50px]'
            marginBottom='mb-4'
+           includeIcon={true}
            />
    
          </div>

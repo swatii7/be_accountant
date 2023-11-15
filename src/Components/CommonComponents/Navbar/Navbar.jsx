@@ -10,7 +10,7 @@ function Navbar() {
   let navTabs = [
     { id: 1, name: 'Home', link: '/' },
     { id: 2, name: 'About Us', link: '/aboutus' },
-    { id: 3, name: 'Service', link: '/service' },
+    { id: 3, name: 'Services', link: '/service' },
     { id: 4, name: 'FAQ', link: '/faq' },
     { id: 5, name: 'Contact', link: '/contact' },
   ];
