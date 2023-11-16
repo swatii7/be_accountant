@@ -36,7 +36,7 @@ function Navbar() {
   };
 
   return (
-    <header className='w-full fixed top-0 left-0 lg:z-50'>
+    <header className='w-full fixed top-0 left-0 lg:z-50 selection:bg-zinc-200 selection:text-black'>
       <div className='lg:flex items-center justify-between bg-white md:px-10 px-7'>
         <div className='font-bold text-2xl cursor-pointer flex items-center py-4 gap-1'>
           <span>

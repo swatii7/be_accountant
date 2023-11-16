@@ -5,7 +5,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid'
  function Card({includeIcon, imgSrc, heading, description, imgClass, WrapClass, cardClass, padding, margin, marginBottom}) {
   return (
     <div
-        className={`block ${padding} ${margin} rounded-2xl bg-white hover:bg-[#EDF2F4] `}>
+        className={`block ${padding} ${margin} rounded-2xl bg-white hover:bg-[#EDF2F4]`}>
         <a href="#!" className={WrapClass}>
           <img
             className={imgClass}

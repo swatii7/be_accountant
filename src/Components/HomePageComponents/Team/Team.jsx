@@ -2,15 +2,15 @@ import React from 'react'
 import teamImg from '../../../assets/HomePage/Team.png'
 import CustomButton from '../../CommonComponents/CustomButton/CustomButton'
 
-export default function () {
+export default function ({image, order}) {
     return (
         <div className='md:pt-[100px] pb-[50px]'>
-            <div className='md:flex block px-[30px]'>
-                <div className='max-w-[581px] lg:w-1/2'>
-                    <img src={teamImg} w-full />
+            <div className='md:flex block px-[30px] mb-10'>
+                <div className={`max-w-[581px] lg:w-1/2 ${order}`}>
+                    <img src={image} w-full />
                 </div>
-                <div className='w-full lg:w-1/2'>
-                    <div className='lg:pl-[100px] lg:pr-[50px] pt-6 md:pt-0 md:pl-5'>
+                <div className={`w-full lg:w-1/2`}>
+                    <div className='lg:pl-[100px] lg:pr-[50px] pt-6 md:pt-0 md:pr-5'>
                         <div className='mb-4'>
                             <h3 className='selection:bg-zinc-200 selection:text-black md:text-[27px] lg:text-[32px] font-bold md:leading-[38px] leading-[23px] text-[19px]'>
                                 Our team of experts will help you in

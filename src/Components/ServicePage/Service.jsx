@@ -8,9 +8,14 @@ import cardImgThree from "../../assets/CardImg/cardIcon3.png";
 import cardImgFour from "../../assets/CardImg/cardIcon4.png";
 import cardImgFive from "../../assets/CardImg/cardIcon5.png";
 import cardImgSix from "../../assets/CardImg/cardIcon6.png";
-import accountantOne from '../../assets/Service/accountant-1.webp'
-import accountantTwo from '../../assets/Service/accountant-2.webp'
-import icon from '../../assets/Service/solutionIcon.png'
+import accountantOne from "../../assets/Service/accountant-1.webp";
+import accountantTwo from "../../assets/Service/accountant-2.webp";
+import icon from "../../assets/Service/solutionIcon.png";
+import DetailSection from "../CommonComponents/SectionWithBg/DetailSection";
+import Team from "../HomePageComponents/Team/Team";
+import team2Img from "../../assets/Service/teamImg2.webp";
+import Subscription from "../CommonComponents/SubscriptionComponent/Subscription";
+import Contact from '../CommonComponents/FooterComponent/ContactSection/Contact'
 
 export default function Service() {
   const cardArr = [
@@ -46,25 +51,28 @@ export default function Service() {
     },
   ];
 
-  const accountDetails=[
+  const accountDetails = [
     {
-      image:accountantOne,
-      heading:'With BeAccountant my business has grown',
-      paraOne:'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
-      paraTwo:'Duis id tellus non leo porta ultricies efficitur non nunc. Suspendisse venenatis, lacus ac aliquam mollis, nisl risus maximus lectus, vitae faucibus lacus ante vel diam.',
-      name:'Maurice Erickson',
-      designation:'Founder – Phasellus'
+      image: accountantOne,
+      heading: "With BeAccountant my business has grown",
+      paraOne:
+        "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+      paraTwo:
+        "Duis id tellus non leo porta ultricies efficitur non nunc. Suspendisse venenatis, lacus ac aliquam mollis, nisl risus maximus lectus, vitae faucibus lacus ante vel diam.",
+      name: "Maurice Erickson",
+      designation: "Founder – Phasellus",
     },
     {
-      image:accountantTwo,
-      heading:'With BeAccountant my business has grown',
-      paraOne:'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.',
-      paraTwo:'Duis id tellus non leo porta ultricies efficitur non nunc. Suspendisse venenatis, lacus ac aliquam mollis, nisl risus maximus lectus, vitae faucibus lacus ante vel diam.',
-      name:'George Plum',
-      designation:'Founder – Sagittis'
+      image: accountantTwo,
+      heading: "With BeAccountant my business has grown",
+      paraOne:
+        "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+      paraTwo:
+        "Duis id tellus non leo porta ultricies efficitur non nunc. Suspendisse venenatis, lacus ac aliquam mollis, nisl risus maximus lectus, vitae faucibus lacus ante vel diam.",
+      name: "George Plum",
+      designation: "Founder – Sagittis",
     },
-
-  ]
+  ];
 
   return (
     <div className="selection:bg-zinc-200 selection:text-black">
@@ -75,7 +83,8 @@ export default function Service() {
         headingSpan="mauris"
         bgImage="bg-[url('/src/assets/Service/banner1.webp')]"
         image={bannerImg}
-        spanClass="text-black ml-2 md:ml-2 md:inline xl:text-left "
+        bgSize='bg-auto'
+        bgPosition='bg-center'
       />
 
       {/*  **/}
@@ -94,7 +103,10 @@ export default function Service() {
           {/* card section */}
           <div className="grid md:grid-cols-2">
             {cardArr.map((card, index) => (
-              <div key={index} className="select-none flex pt-10 md:pt-0 px-[33px]">
+              <div
+                key={index}
+                className="select-none flex pt-10 md:pt-0 px-[33px]"
+              >
                 <Card
                   imgSrc={card.image}
                   heading={card.title}
@@ -112,69 +124,82 @@ export default function Service() {
         </div>
       </div>
       {/*  */}
-      <div className="bg-[#EDF2F4] bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-services-bg2.webp')] py-[100px]">
-<div className="max-w-[550px] lg:max-w-7xl mx-auto px-[33px]">
-  <div className="mx-3 mb-10 relative">
-    <h2 className="text-[29px] md:text-[41px] lg:text-5xl font-bold leading-[30px] md:leading-[43px] lg:leading-[50px]">
-    Solutions for every
-    <span className="text-red-600 block">business need</span>
-    </h2>
-  </div>
-  {accountDetails.map((detail,index)=>
-   <div key={index} className="block md:flex relative items-center">
-   <div className="lg:w-1/4 md:w-1/6 z-[2] relative md:mr-[-200px] lg:mr-[-150px] lg:mb-[45px]">
-     <div className="w-full mx-4">
-     <img src={detail.image} className="relative" />
-     </div>
 
-   </div>
-   <div className="z-[1] md:w-5/6 lg:w-3/4 relative">
-     <div className="bg-white rounded-2xl  pt-0 mt-[-71px] md:mt-[50px] px-[30px] pb-[30px] md:pb-10 lg:pb-10 md:pr-[50px] lg:pr-[50px] md:pl-[225px] md:mb-[45px] items-end relative md:top-0">
-       <div className="flex justify-between">
-       <div className="mx-3 mb-10">
- <h4 className="text-sm lg:text-2xl leading-[19px] lg:leading-[29px] font-bold pt-[122px] lg:pt-16">
-{detail.heading}
- </h4>
-</div>
-{/* icon wrapper */}
-<div className="items-center pt-[126px] lg:pt-[37px]">
-<img src={icon} />
-</div>
+      {/* accountant section */}
+      <div className="bg-[#EDF2F4] bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-services-bg2.webp')] bg-center lg:bg-right bg-no-repeat py-[100px]">
+        <div className="max-w-[550px] md:max-w-4xl lg:max-w-7xl mx-auto px-[33px]">
+          <div className="mx-3 mb-10 relative">
+            <h2 className="text-[29px] md:text-[41px] lg:text-5xl font-bold leading-[30px] md:leading-[43px] lg:leading-[50px]">
+              Solutions for every
+              <span className="text-red-600 block">business need</span>
+            </h2>
+          </div>
+          {accountDetails.map((detail, index) => (
+            <div
+              key={index}
+              className="block md:flex flex-wrap relative items-center mb-[45px] md:mb-0"
+            >
+              <div className="w-full lg:w-1/4 md:w-1/6 z-[2] relative mr-[-200px] md:mr-0 lg:mr-[-60px] lg:mb-[45px]">
+                <div className="w-full max-w-[257px] mx-4 md:ml-[84px] md:mb-[90px] lg:mb-0">
+                  <img
+                    src={detail.image}
+                    className="relative object-contain md:scale-[2.5] lg:scale-100"
+                  />
+                </div>
+              </div>
+              <div className="z-[1] md:w-5/6 lg:w-3/4 relative">
+                <div className="bg-white rounded-2xl  pt-0 mt-[-71px] md:mt-0 px-[30px] pb-[30px] md:pb-10 lg:pb-10 md:pr-[50px] lg:pr-[50px] md:pl-[190px] md:mb-[45px] items-end relative md:top-0">
+                  <div className="flex justify-between">
+                    <div className="mx-3 mb-10">
+                      <h4 className="text-sm md:text-[20px] lg:text-2xl leading-[19px] md:leading-[25px] lg:leading-[29px] font-bold pt-[122px] md:pt-[60px] lg:pt-16">
+                        {detail.heading}
+                      </h4>
+                    </div>
+                    {/* icon wrapper */}
+                    <div className="items-center pt-[126px] md:pt-[60px] lg:pt-[37px]">
+                      <img src={icon} />
+                    </div>
+                  </div>
 
-       </div>
+                  {/* paragraph Wrapper*/}
+                  <div className="mx-3 mb-10">
+                    <p className="text-[#8d99ae] mb-5 md:mx-3 pr-0 lg:pr-[12%]">
+                      {detail.paraOne}
+                    </p>
+                    <p className="text-[#8d99ae] mb-5 md:mx-3 pr-0 lg:pr-[12%]">
+                      {detail.paraTwo}
+                    </p>
+                  </div>
 
-{/* paragraph Wrapper*/}
-<div className="mx-3 mb-10">
- <p className="text-[#8d99ae] mb-5 md:mx-3 pr-[20%]">
- {detail.paraOne}
- </p>
- <p className="text-[#8d99ae] mb-5 md:mx-3 pr-[20%]">
- {detail.paraTwo}
- </p>
-</div>
+                  {/* name Wrapper*/}
+                  <div className="mb-[5px] mx-3">
+                    <h5 className="text-xl font-bold leading-[30px] mx-3">
+                      {detail.name}
+                    </h5>
+                  </div>
 
-{/* name Wrapper*/}
-<div className="mb-[5px] mx-3">
- <h5 className="text-xl font-bold leading-[30px] mx-3">
-{detail.name}
- </h5>
-</div>
-
-<div className="mx-3 mb-[10px]">
- <p className="text-[#8d99ae] mx-3 mb-[15px]">
-{detail.designation}
- </p>
-</div>
-
-     </div>
-
-   </div>
- </div>
-  )}
- 
-
-</div>
+                  <div className="mx-3 mb-[10px]">
+                    <p className="text-[#8d99ae] mx-3 mb-[15px]">
+                      {detail.designation}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+      {/*   */}
+
+      <DetailSection />
+      <div className="lg:max-w-7xl mx-auto pt-[50px]">
+        <Team image={team2Img} order="order-2" />
+      </div>
+      <div className="lg:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 pb-[60px]">
+        <Subscription title="Personal" bgColor="bg-[#E62F43]" price="29" />
+        <Subscription title="Business" bgColor="bg-black" price="59" />
+      </div>
+      <Contact />
     </div>
   );
 }

@@ -8,6 +8,8 @@ import Team from '../Team/Team'
 import Details from '../Team/Details'
 import Accountant from '../AccountantSection/Accountant'
 import Contact from '../../CommonComponents/FooterComponent/ContactSection/Contact'
+import DetailSection from '../../CommonComponents/SectionWithBg/DetailSection'
+import teamImg from '../../../assets/HomePage/Team.png'
 
 
 export default function Home() {
@@ -127,8 +129,9 @@ const cardArr= [
      
 
     </div>
-    <Team />
+    <Team image={teamImg} />
    </section>
+   <DetailSection />
    <Details />
    <Accountant />
    <Contact />

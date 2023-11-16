@@ -11,6 +11,7 @@ import ValueImgTwo from '../../../assets/AboutPage/value2.png'
 import valueImgThree from '../../../assets/AboutPage/value3.png'
 import CustomButton from '../../CommonComponents/CustomButton/CustomButton'
 import Contact from '../../CommonComponents/FooterComponent/ContactSection/Contact'
+import teamImg from '../../../assets/HomePage/Team.png'
 
 export default function About() {
 
@@ -41,7 +42,9 @@ export default function About() {
          padding='py-[50px] md:py-[100px] px-[60px] lg:px-[73px] xl:px-[250px]'
           image={cardImg}
            bgImage="bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-about-bg.webp')] bg-[top_center] bg-cover"
-           spanClass='text-black ml-2 md:ml-0 md:block xl:text-left '
+           spanClass='text-black ml-2 md:ml-0 md:block lg:inline xl:text-left '
+           bgSize='bg-auto'
+        bgPosition='bg-center'
             />
       <div className='grid grid-cols-1 md:grid-cols-2 pt-10 pb-[50px] md:pb-[100px] lg:max-w-7xl mx-auto px-[33px]'>
         <div className='md:mx-3 md:px-2'>
@@ -67,7 +70,7 @@ export default function About() {
 
       {/* team section */}
       <div className='lg:max-w-7xl mx-auto'>
-      <Team />
+      <Team image={teamImg} />
       </div>
 {/* */}
       {/* accountant section */}
