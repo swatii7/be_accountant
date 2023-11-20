@@ -29,12 +29,17 @@ export default function Footer() {
       <div className='max-w-screen-xl mx-auto'>
 
      
-      <div className="grid lg:grid-cols-3 gap-6 py-16">
-        <div>
+      <div className="md:flex gap-6 py-16">
+        <div className='w-full md:w-1/2'>
           <img src={logo} alt="Logo" />
-          <p className="text-[#8d99ae]">Arcu sit venenatis lacinia dolor urna. Amet magna vulputate elit vestibulum ultrices. Viverra ultrices vel morbi sed tortor, lacus, dui id scelerisque.</p>
+          <div>
+          <p className="text-[#8d99ae] w-[397px]">
+            Arcu sit venenatis lacinia dolor urna. Amet magna vulputate elit vestibulum ultrices. Viverra ultrices vel morbi sed tortor, lacus, dui id scelerisque.
+            </p>
+          </div>
+          
         </div>
-        <div className='text-left md:ml-[130px]'>
+        <div className='text-left w-full md:w-1/4'>
           <h5 className='text-xl font-bold mb-4'>Address</h5>
           <ul className='mb-4'>
             {addressData.map((line, index) => (

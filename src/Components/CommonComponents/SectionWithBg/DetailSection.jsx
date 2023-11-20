@@ -22,7 +22,7 @@ export default function DetailSection() {
             <div className='col-span-4 md:col-span-2'>
             <div className='pt-[75px] pl-[22px] lg:pl-[50px] pb-[40px] border-[#9F9F9F] border-t-[1px] border-r-[1px] border-l-[1px] border-b-[1px] md:rounded-tr-2xl  '>
            <span className='text-white text-[60px] font-bold'>
-           <Counter number={600} />
+           <Counter number={600} start={10} scrollSpyDelay={40} />
            </span>
            <p className='text-white mt-[-25px] mb-[40px] text-2xl font-bold'>
             Clients

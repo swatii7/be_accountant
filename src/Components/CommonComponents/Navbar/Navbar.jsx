@@ -1,8 +1,8 @@
-import React,{Fragment, useState} from 'react'
+import React,{Fragment, useState, useEffect} from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Dialog, Transition } from '@headlessui/react'
 import logo from '../../../assets/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Navbar() {
 
@@ -16,8 +16,19 @@ function Navbar() {
   ];
 
   const [open, setOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('Home'); // Set 'Home' as the default active link
+  const [activeLink, setActiveLink] = useState(''); // Set 'Home' as the default active link
   const [hoveredLinks, setHoveredLinks] = useState({});
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Extract the pathname from the URL and set the active link based on it
+    const pathname = location.pathname;
+    const activeLink = navTabs.find((link) => link.link === pathname)?.name || '/';
+    if(activeLink){
+      setActiveLink(activeLink);
+    }
+  }, [location.pathname]);
 
   const handleLinkClick = (linkName) => {
     setOpen(false)

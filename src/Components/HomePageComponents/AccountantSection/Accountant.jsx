@@ -5,6 +5,11 @@ import CustomButton from '../../CommonComponents/CustomButton/CustomButton'
 
 
 export default function Accountant() {
+
+    const handleButtonClick=() =>{
+window.location.href= '/aboutus'
+    }
+
     return (
         <section className="bg-[#E62F43] bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-section-bg1.png')] text-white py-[50px] lg:py-[100px] px-[30px]">
             <div className='xl:max-w-7xl mx-auto'>
@@ -22,7 +27,11 @@ export default function Accountant() {
                             </p>
                         </div>
                         <div>
-                            <CustomButton title='about us' />
+                            <CustomButton title='about us'
+                            onClick= {handleButtonClick}
+                            hvBgColor='hover:bg-white'
+                            hvtextColor= 'hover:text-[#e62f43]'
+                              />
                         </div>
                     </div>
                     <div className='flex md:w-[60%] md:mt-[51px]'>

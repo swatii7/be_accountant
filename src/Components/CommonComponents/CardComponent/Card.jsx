@@ -2,11 +2,11 @@ import React from 'react'
 import cardImgOne from '../../../assets/CardImg/cardIcon1.png'
 import { ArrowRightIcon } from '@heroicons/react/24/solid'
 
- function Card({includeIcon, imgSrc, heading, description, imgClass, WrapClass, cardClass, padding, margin, marginBottom}) {
+ function Card({onClick, includeIcon, imgSrc, heading, description, imgClass, WrapClass, cardClass, padding, margin, marginBottom}) {
   return (
     <div
-        className={`block ${padding} ${margin} rounded-2xl bg-white hover:bg-[#EDF2F4]`}>
-        <a href="#!" className={WrapClass}>
+        className={`block ${padding} ${margin} rounded-2xl bg-white hover:bg-[#EDF2F4]`} onClick={onClick}>
+        <a href="#" className={WrapClass}>
           <img
             className={imgClass}
             src={imgSrc}
@@ -22,7 +22,9 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid'
           </p>
           {includeIcon &&
           <div className='img-center'>
-          <ArrowRightIcon className={`text-red-600 md:mr-auto max-w-[20px] pt-[10px] ${marginBottom}`} />
+          <ArrowRightIcon 
+          onClick={onClick}
+           className={`text-red-600 md:mr-auto max-w-[20px] pt-[10px] ${marginBottom}`} />
         </div>
         }
          

@@ -1,10 +1,18 @@
 import React from 'react'
-import teamImg from '../../../assets/HomePage/Team.png'
 import CustomButton from '../../CommonComponents/CustomButton/CustomButton'
 
 export default function ({image, order}) {
+
+    const handleButtonClick = () => {
+        // Navigate to another page (replace '/another-page' with your desired route)
+        window.location.href = '/aboutus';
+      };
+    
+
     return (
-        <div className='md:pt-[100px] pb-[50px]'>
+        <div
+        id='teamConatiner'
+         className='md:pt-[100px] pb-[50px]'>
             <div className='md:flex block px-[30px] mb-10'>
                 <div className={`max-w-[581px] lg:w-1/2 ${order}`}>
                     <img src={image} w-full />
@@ -27,7 +35,14 @@ export default function ({image, order}) {
                             Duis id tellus non leo porta ultricies efficitur non nunc. Suspendisse venenatis, lacus ac aliquam mollis, nisl risus maximus lectus, vitae faucibus lacus ante vel diam. Sed lectus purus, lobortis eu aliquet at, ullamcorper sed.
                             </p>
                         </div>
-<CustomButton border='border-[#e62f43]' title='read more' text='text-[#e62f43]' hvBgColor='hover:bg-[#e62f43]' hvtextColor='hover:text-white' />
+<CustomButton
+ border='border-[#e62f43]'
+  title='read more'
+   text='text-[#e62f43]'
+    hvBgColor='hover:bg-[#e62f43]'
+     hvtextColor='hover:text-white'
+     onClick={handleButtonClick}
+      />
                     </div>
 
                 </div>

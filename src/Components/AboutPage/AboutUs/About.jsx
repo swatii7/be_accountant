@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import CustomBanner from '../../CommonComponents/CustomBanner/CustomBanner'
 import cardImg from '../../../assets/HomePage/cardOne.webp'
 import Team from '../../HomePageComponents/Team/Team'
@@ -14,6 +14,10 @@ import Contact from '../../CommonComponents/FooterComponent/ContactSection/Conta
 import teamImg from '../../../assets/HomePage/Team.png'
 
 export default function About() {
+
+  const handleButtonClick=()=>{
+    window.location.href= '/contact'
+  }
 
   const valueArr= [
     {
@@ -33,18 +37,29 @@ export default function About() {
 },
 ]
 
+const aboutRef = useRef(null)
+const teamRef = useRef(null)
+
+const scrollToSection = (ref) => {
+  ref.current.scrollIntoView({ behavior: 'auto' });
+};
+
 
   return (
-    <section className='selection:bg-zinc-200 selection:text-black'>
+    <section
+    ref={aboutRef}
+    id='aboutSection'
+     className='selection:bg-zinc-200 selection:text-black'>
       <CustomBanner title='About us'
        heading='A tincidunt amet risus aenean leo'
         headingSpan='bibendum'
-         padding='py-[50px] md:py-[100px] px-[60px] lg:px-[73px] xl:px-[250px]'
+         padding='py-[50px] md:py-[100px] px-[5%]'
           image={cardImg}
            bgImage="bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-about-bg.webp')] bg-[top_center] bg-cover"
            spanClass='text-black ml-2 md:ml-0 md:block lg:inline xl:text-left '
            bgSize='bg-auto'
         bgPosition='bg-center'
+        onClick ={()=>scrollToSection(teamRef)}
             />
       <div className='grid grid-cols-1 md:grid-cols-2 pt-10 pb-[50px] md:pb-[100px] lg:max-w-7xl mx-auto px-[33px]'>
         <div className='md:mx-3 md:px-2'>
@@ -69,8 +84,8 @@ export default function About() {
       </div>
 
       {/* team section */}
-      <div className='lg:max-w-7xl mx-auto'>
-      <Team image={teamImg} />
+      <div className='lg:max-w-7xl mx-auto' ref={teamRef}>
+      <Team image={teamImg}  />
       </div>
 {/* */}
       {/* accountant section */}
@@ -101,16 +116,16 @@ export default function About() {
   </div>
   <div className='flex items-center text-center mb-[40px] mt-12'>
     <div className='bg-[#f0f0f0] w-[43px] h-[43px] text-[15px] mr-3 p-[10px] hover:bg-[#3a589b] hover:text-white'>
-    <FontAwesomeIcon icon={faFacebookF} />
+    <FontAwesomeIcon icon={faFacebookF} onClick ={()=>scrollToSection(aboutRef)} />
     </div>
     <div className='bg-[#f0f0f0] w-[43px] h-[43px] text-[15px] mr-3 p-[10px] hover:bg-[#32ccfe] hover:text-white'>
-    <FontAwesomeIcon icon={faTwitter} />
+    <FontAwesomeIcon icon={faTwitter} onClick ={()=>scrollToSection(aboutRef)} />
     </div>
     <div className='bg-[#f0f0f0] w-[43px] h-[43px] text-[15px] mr-3 p-[10px] hover:bg-[#007bb6] hover:text-white'>
-    <FontAwesomeIcon icon={faLinkedinIn} />
+    <FontAwesomeIcon icon={faLinkedinIn} onClick ={()=>scrollToSection(aboutRef)} />
     </div>
     <div className='bg-[#f0f0f0] w-[43px] h-[43px] text-[15px] mr-3 p-[10px] hover:bg-[#cb2027] hover:text-white'>
-    <FontAwesomeIcon icon={faPinterestP} />
+    <FontAwesomeIcon icon={faPinterestP} onClick ={()=>scrollToSection(aboutRef)} />
     </div>
   </div>
 </div>
@@ -134,16 +149,16 @@ export default function About() {
   </div>
   <div className='flex items-center text-center mb-[40px] mt-12'>
     <div className='bg-[#f0f0f0] w-[43px] h-[43px] text-[15px] mr-3 p-[10px] hover:bg-[#3a589b] hover:text-white'>
-    <FontAwesomeIcon icon={faFacebookF} />
+    <FontAwesomeIcon icon={faFacebookF} onClick ={()=>scrollToSection(aboutRef)} />
     </div>
     <div className='bg-[#f0f0f0] w-[43px] h-[43px] text-[15px] mr-3 p-[10px] hover:bg-[#32ccfe] hover:text-white'>
-    <FontAwesomeIcon icon={faTwitter} />
+    <FontAwesomeIcon icon={faTwitter} onClick ={()=>scrollToSection(aboutRef)} />
     </div>
     <div className='bg-[#f0f0f0] w-[43px] h-[43px] text-[15px] mr-3 p-[10px] hover:bg-[#007bb6] hover:text-white'>
-    <FontAwesomeIcon icon={faLinkedinIn} />
+    <FontAwesomeIcon icon={faLinkedinIn} onClick ={()=>scrollToSection(aboutRef)} />
     </div>
     <div className='bg-[#f0f0f0] w-[43px] h-[43px] text-[15px] mr-3 p-[10px] hover:bg-[#cb2027] hover:text-white'>
-    <FontAwesomeIcon icon={faPinterestP} />
+    <FontAwesomeIcon icon={faPinterestP} onClick ={()=>scrollToSection(aboutRef)} />
     </div>
   </div>
 </div>
@@ -171,7 +186,7 @@ export default function About() {
         <div className='grid grid-cols-2 md:grid-cols-3'>
           {valueArr.map((item, index)=>
           <div key={index} className='text-center md:mx-3 mb-[40px]'>
-          <div className='mb-[30px] img-center'>
+          <div className='mb-[30px] img-center hover:scale-110 transition-all duration-[0.5s] ease-in'>
             <img src={item.image} />
           </div>
           <div className='text-white'>
@@ -197,7 +212,14 @@ export default function About() {
   <h2 className='text-white font-bold text-[29px] leading-[30px] md:text-5xl mx-3 mb-[40px]'>
   Vitae ultrices porttitor sit aliquet tellus. Nisi.
   </h2>
-  <CustomButton title='Free consultation' text='text-white' hvBgColor='hover:bg-[#e62f43]' hvBorderColor='hover:border-[#e62f43]' marginLeft='md:ml-[200px] ml-[62px]' />
+  <CustomButton 
+  title='Free consultation'
+   text='text-white'
+    hvBgColor='hover:bg-[#e62f43]' 
+    hvBorderColor='hover:border-[#e62f43]'
+     marginLeft='md:ml-[200px] ml-[62px]' 
+     onClick={handleButtonClick}
+     />
 </div>
 
         </div>

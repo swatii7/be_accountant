@@ -1,15 +1,20 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import { ArrowSmallRightIcon, ArrowDownRightIcon } from '@heroicons/react/24/solid'
 import imgOne from '../../../assets/HomePage/image2.png'
 import Card from '../../CommonComponents/CardComponent/Card'
 import cardImgOne from '../../../assets/CardImg/cardIcon1.png'
 import cardImgTwo from '../../../assets/CardImg/cardIcon2.png'
 import Team from '../Team/Team'
-import Details from '../Team/Details'
 import Accountant from '../AccountantSection/Accountant'
 import Contact from '../../CommonComponents/FooterComponent/ContactSection/Contact'
 import DetailSection from '../../CommonComponents/SectionWithBg/DetailSection'
 import teamImg from '../../../assets/HomePage/Team.png'
+import 'animate.css'; 
+import wow from 'wow.js'; 
+import 'wow.js/css/libs/animate.css';
+import CardOneImg from '../../../assets/HomePage/cardOne.webp'
+import CardTwoImg from '../../../assets/HomePage/cardTwo.webp'
+import CardThreeImg from '../../../assets/HomePage/cardThree.webp'
 
 
 export default function Home() {
@@ -33,17 +38,52 @@ const cardArr= [
 
 ]
 
+const detailCardArr= [
+  {
+    image:CardOneImg,
+    title: 'Varius convallis',
+    desc:'A dictumst odio turpis molestie egestas. Accumsan volutpat adipiscing quam tristique turpis blandit.',
+  },
+  {
+    image:CardTwoImg,
+    title: 'Purus ferment',
+   desc:'A dictumst odio turpis molestie egestas. Accumsan volutpat adipiscing quam tristique turpis blandit.',
+  },
+  {
+    image:CardThreeImg,
+    title: 'Faucibus nulla',
+   desc:'A dictumst odio turpis molestie egestas. Accumsan volutpat adipiscing quam tristique turpis blandit.',
+  },
+
+]
+
+
+useEffect(() => {
+  // Initialize Wow.js
+  const wowInstance = new wow();
+  wowInstance.init();
+}, []);
+
+const sectionRef = useRef(null)
+
+const scrollToSection = (ref) => {
+  ref.current.scrollIntoView({ behavior: 'auto' });
+};
+
 
   return (
     <>
-    <section className="bg-red pt-20 mb:20 md:mb-15  text-white bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-section-bg1.png')]">
+    <section 
+    ref={sectionRef}
+     id='homeSection'
+      className="bg-red pt-20 mb:20 md:mb-15  text-white bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-section-bg1.png')]">
       <div className="select-none xl:max-w-7xl 2xl:mx-[232px]  px-[30px] md:px-10">
         <div className='grid lg:grid-cols-5'>
 
           <div className='lg:col-span-3 text-center lg:text-left'>
             <h3 className='font-bold text-xl'>Be Accountant</h3>
             {/* heading div */}
-            <div className='pt-9'>
+            <div className='pt-9 wow animate__animated animate__fadeInDown'>
               <h1 className='text-3xl md:text-[40px] lg:text-5xl xl:text-[70px] md:leading-[70px] font-bold'>
                 Accounting Services<br />
                 <span className='text-black mr-3'>
@@ -53,11 +93,11 @@ const cardArr= [
               </h1>
             </div>
            
-            <div className='hidden lg:block max-w-[90px] h-auto mt-10 bg-black text-white rounded-[50%]'>
-              <ArrowSmallRightIcon className='xl:p-8 md:p-[20px] w-full ' />
+            <div className='hidden lg:block w-[73px] h-auto mt-10 bg-black text-white rounded-[50%] wow animate__animated animate__fadeInLeft'>
+              <ArrowSmallRightIcon className=' p-7 w-full ' />
             </div>
             {/* */}
-<div className='hidden lg:block'>
+<div className='hidden lg:block wow animate__animated animate__fadeInUp'>
 <div className='grid grid-cols-4  md:grid-cols-4 lg:mt-8 xl:mt-32 '>
               <div className='col-span-2 bg-[#fbf4f4]  flex w-full'>
                 <img src={imgOne} className='object-fit' />
@@ -122,6 +162,7 @@ const cardArr= [
            padding='p-30 md:p-[50px]'
            marginBottom='mb-4'
            includeIcon={true}
+           onClick={()=> scrollToSection(sectionRef)}
            />
    
          </div>
@@ -129,10 +170,41 @@ const cardArr= [
      
 
     </div>
+
     <Team image={teamImg} />
    </section>
    <DetailSection />
-   <Details />
+   <div className='pt-[100px] pb-[60px] xl:max-w-7xl mx-auto px-[30px]'>
+            <div className='mb-9 flex justify-between items-center'>
+      <h2 className='selection:bg-zinc-200 selection:text-black md:text-[41px] mx-3 md:leading-[43px] lg:text-5xl font-bold'>
+      Suspendisse enim
+      <br />
+      <span className='text-red-600'>sed proin nunc</span>
+      </h2>
+      <img src='https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-home-icon1.svg' />
+    </div>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3'>
+      {detailCardArr.map((card,index) =>
+       <div key={index} className='select-none'>
+        <Card imgSrc={card.image}
+        heading={card.title}
+         description={card.desc}
+          imgClass='rounded-t-lg mb-30 md:mr-auto'
+           WrapClass='img-center'
+           cardClass='px-[10%] pt-[30px] pb-[30px] text-center md:text-left'
+           margin='mx-3 mb-[40px]'
+           marginBottom= 'mb-[30px]'
+           includeIcon={true}
+           onClick={()=> scrollToSection(sectionRef)}
+           />
+   
+         </div>
+      )}
+     
+
+    </div>
+
+            </div>
    <Accountant />
    <Contact />
     </>

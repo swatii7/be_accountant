@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import CustomBanner from "../CommonComponents/CustomBanner/CustomBanner";
 import bannerImg from "../../assets/Service/banner1.webp";
 import Card from "../CommonComponents/CardComponent/Card";
@@ -74,17 +74,28 @@ export default function Service() {
     },
   ];
 
+
+  const serviceRef = useRef(null)
+  const sectionRef = useRef(null)
+
+  const scrollToSection = (ref)=>{
+ref.current.scrollIntoView({ behavior: 'auto' })
+  }
+
+
   return (
     <div className="selection:bg-zinc-200 selection:text-black">
       <CustomBanner
+      naviagteToSection='sectionTarget'
         title="Services"
-        padding="py-[50px] md:py-[100px] px-[10px] md:px-12 lg:px-[73px] xl:px-[250px]"
+        padding="py-[50px] md:py-[100px]"
         heading="Massa urna suspendisse mattis"
         headingSpan="mauris"
-        bgImage="bg-[url('/src/assets/Service/banner1.webp')]"
+        bgImage="bg-[url('/src/assets/Service/banner1.webp')] bg-cover"
         image={bannerImg}
         bgSize='bg-auto'
         bgPosition='bg-center'
+        onClick={()=> scrollToSection(serviceRef)}
       />
 
       {/*  **/}
@@ -105,7 +116,8 @@ export default function Service() {
             {cardArr.map((card, index) => (
               <div
                 key={index}
-                className="select-none flex pt-10 md:pt-0 px-[33px]"
+                className="select-none flex pt-10 md:pt-0 px-[33px]
+                hover:scale-105 transition-all duration-[0.5s] ease-in"
               >
                 <Card
                   imgSrc={card.image}
@@ -117,6 +129,7 @@ export default function Service() {
                   padding="p-30 md:p-[50px]"
                   marginBottom="mb-4"
                   includeIcon={false}
+                  onClick={()=> scrollToSection(serviceRef)}
                 />
               </div>
             ))}
@@ -126,7 +139,9 @@ export default function Service() {
       {/*  */}
 
       {/* accountant section */}
-      <div className="bg-[#EDF2F4] bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-services-bg2.webp')] bg-center lg:bg-right bg-no-repeat py-[100px]">
+      <div
+      ref={serviceRef}
+       className="bg-[#EDF2F4] bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-services-bg2.webp')] bg-center lg:bg-right bg-no-repeat py-[100px]">
         <div className="max-w-[550px] md:max-w-4xl lg:max-w-7xl mx-auto px-[33px]">
           <div className="mx-3 mb-10 relative">
             <h2 className="text-[29px] md:text-[41px] lg:text-5xl font-bold leading-[30px] md:leading-[43px] lg:leading-[50px]">

@@ -1,12 +1,21 @@
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
 
-export default function Subscription({title, bgColor, price}) {
+export default function Subscription({title, bgColor, price, scrollToServiceTarget}) {
   const subsArr = [
     "Morbi tempor et",
     "Vehicula dolor fin",
     "Vitae eros fermet",
   ];
+
+  const handleButtonClick = () => {
+    const targetSection = document.getElementById('serviceTarget');
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
   return (
   
       <div className={`${bgColor} text-white text-center rounded-2xl py-[30px] mx-3 mb-10 px-[33px]`}>
@@ -42,7 +51,7 @@ export default function Subscription({title, bgColor, price}) {
 
           {/* footer wrapper */}
           <div className="text-center inline-flex mb-[10px]">
-            <CustomButton title='CHOOSE AN OPTION' order='order-2' />
+            <CustomButton title='CHOOSE AN OPTION' order='order-2' onClick={handleButtonClick} />
           </div>
         </div>
       </div>

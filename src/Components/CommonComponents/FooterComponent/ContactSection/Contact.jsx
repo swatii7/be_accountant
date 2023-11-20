@@ -2,6 +2,11 @@ import React from 'react'
 import CustomButton from '../../CustomButton/CustomButton'
 
 export default function Contact() {
+
+  const handleButtonClick=()=>{
+    window.location.href= '/contact'
+  }
+
   return (
     <section className="bg-[#EDF2F4] bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountant4-section-bg2.svg')] bg-no-repeat bg-[top_center] pt-[100px] pb-[60px]">
       <div className='selection:bg-zinc-200 selection:text-black text-center xl:max-w-7xl mx-auto'>
@@ -18,7 +23,7 @@ export default function Contact() {
           
         </div>
         <div className='img-center mx-3 mb-[40px]'>
-        <CustomButton border='border-[#e62f43]' mb='mb-5' title='free consultation' text='text-[#e62f43]' hvBgColor='hover:bg-[#e62f43]' hvtextColor='hover:text-white' />
+        <CustomButton border='border-[#e62f43]' mb='mb-5' title='free consultation' text='text-[#e62f43]' hvBgColor='hover:bg-[#e62f43]' hvtextColor='hover:text-white' onClick={handleButtonClick} />
         <p className='text-[#8d99ae] selection:bg-zinc-200 selection:text-black'>
         Aliquam dictum amet blandit efficitur.
         </p>
