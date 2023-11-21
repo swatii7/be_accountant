@@ -30,7 +30,7 @@ export default function DetailSection() {
             </div>
             </div>
             <div className='col-span-4 md:col-span-2'>
-            <div className='pt-[75px] pl-3 lg:pl-[50px] pb-[40px] border-[#9F9F9F] border-t-[1px] border-b-[1px] border-l-[1px] border-r-[1px]  md:rounded-bl-2xl  '>
+            <div className='pt-[75px] pl-3 lg:pl-[50px] pb-[40px] border-[#9F9F9F] border-t-0 border-b-[1px] border-l-[1px] border-r-[1px]  md:rounded-bl-2xl  '>
            <span className='text-white text-[60px] font-bold'>
            <Counter number={9000} separator="" className='ml-[22px] lg:ml-11' />
            </span>

@@ -48,9 +48,9 @@ function Navbar() {
 
   return (
     <header className='w-full fixed top-0 left-0 lg:z-50 selection:bg-zinc-200 selection:text-black'>
-      <div className='lg:flex items-center justify-between bg-white md:px-10 px-7'>
-        <div className='font-bold text-2xl cursor-pointer flex items-center py-4 gap-1'>
-          <span>
+      <div className='lg:flex items-center justify-between bg-white md:py-[15px] md:px-0 px-7'>
+        <div className='font-bold text-2xl cursor-pointer flex items-center py-[6px] gap-1'>
+          <span className='pl-5 pr-[30px]'>
             <img src={logo} alt="Logo" />
           </span>
         </div>
@@ -64,15 +64,15 @@ function Navbar() {
           className={`hidden lg:flex md:items-center md:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in`}
         >
           {navTabs.map((link) => (
-            <li key={link.link} className='lg:ml-8 md:my-0 my-7 py-4 font-medium'>
+            <li key={link.link} className='lg:px-5 md:my-0 my-7 py-4 text-base font-roboto font-normal'>
               <Link
                 to={link.link}
                 className={`duration-500 border-transparent py-[30px] relative  ${
-                  activeLink === link.name ? 'text-red-600 after:border-transparent after:border-t-red-600 after:border-[7px] after:top-0 after:left-[50%] after:translate-x-[-50%] after:absolute ' : ''
+                  activeLink === link.name ? 'text-red-600 after:border-transparent after:border-t-red-600 after:border-[7px] after:top-[-6px] after:left-[50%] after:translate-x-[-50%] after:absolute ' : ''
                 }
                 ${
                   hoveredLinks[link.id]
-                    ? 'hover:text-red-600 after:border-transparent hover:after:border-t-red-600 after:border-[7px] after:top-0 after:left-[50%] after:translate-x-[-50%] after:absolute  '
+                    ? 'hover:text-red-600 after:border-transparent hover:after:border-t-red-600 after:border-[7px] after:top-[-6px] after:left-[50%] after:translate-x-[-50%] after:absolute  '
                     : ''
                 }`}
                 onClick={() => handleLinkClick(link.name)}
