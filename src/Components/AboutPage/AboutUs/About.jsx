@@ -53,12 +53,15 @@ const scrollToSection = (ref) => {
       <CustomBanner title='About us'
        heading='A tincidunt amet risus aenean leo'
         headingSpan='bibendum'
+        spanColor='text-black'
+    textColor='text-white'
          padding='py-[50px] md:py-[100px] px-[5%]'
           image={cardImg}
            bgImage="bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-about-bg.webp')] bg-[top_center] bg-cover"
            spanClass='text-black ml-2 md:ml-0 md:block lg:inline xl:text-left '
            bgSize='bg-auto'
         bgPosition='bg-center'
+        brClass='hidden md:block'
         onClick ={()=>scrollToSection(teamRef)}
             />
       <div className='grid grid-cols-1 md:grid-cols-2 pt-10 pb-[50px] md:pb-[100px] lg:max-w-7xl mx-auto px-[33px]'>

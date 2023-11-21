@@ -52,10 +52,12 @@ const OfficeList= [
       <CustomBanner
         title="Contact"
         padding="py-[50px] md:py-[100px]"
-        heading="venenatis vestibulum"
-        headingSpan="Dapibus"
+        heading="Dapibus"
+        headingSpan="venenatis vestibulum"
+        spanColor='text-white'
+    textColor='text-black'
         bgImage="bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountant4-contact-pic1.webp')] bg-center bg-no-repeat w-full h-auto"
-        spanPosition="top"
+        brClass='hidden'
         bgColor="bg-[#EDF2F4]"
         bgSize="bg-contain"
       />

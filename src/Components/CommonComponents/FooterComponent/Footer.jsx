@@ -33,7 +33,7 @@ export default function Footer() {
         <div className='w-full md:w-1/2'>
           <img src={logo} alt="Logo" />
           <div>
-          <p className="text-[#8d99ae] w-[397px]">
+          <p className="text-[#8d99ae] w-[330px] md:w-[397px]">
             Arcu sit venenatis lacinia dolor urna. Amet magna vulputate elit vestibulum ultrices. Viverra ultrices vel morbi sed tortor, lacus, dui id scelerisque.
             </p>
           </div>

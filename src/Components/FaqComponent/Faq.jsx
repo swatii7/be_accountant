@@ -62,14 +62,17 @@ export default function Faq() {
          <CustomBanner
         title="FAQ"
         padding="py-[50px] md:py-[100px]"
-        heading="pellentesque arcu enim nulla"
-        headingSpan="Sed in massa"
+        heading="Sed in massa"
+        headingSpan="pellentesque arcu enim nulla"
+        spanColor='text-white'
+    textColor='text-black'
         bgImage="bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-faq-pic1.webp')] bg-cover bg-no-repeat"
         image={bannerImg}
         spanPosition='top'
         bgPosition='bg-center lg:bg-[top_left]'
         bgColor='bg-[#E62F43]'
         bgSize='bg-contain'
+        brClass='hidden md:block'
       />
       <div className='bg-[#E62F43] pt-20 pb-[60px] px-[33px]'>
         <div className='lg:max-w-7xl mx-auto'>

@@ -91,10 +91,13 @@ ref.current.scrollIntoView({ behavior: 'auto' })
         padding="py-[50px] md:py-[100px]"
         heading="Massa urna suspendisse mattis"
         headingSpan="mauris"
+        spanColor='text-black'
+    textColor='text-white'
         bgImage="bg-[url('/src/assets/Service/banner1.webp')] bg-cover"
         image={bannerImg}
         bgSize='bg-auto'
         bgPosition='bg-center'
+        brClass='hidden md:block'
         onClick={()=> scrollToSection(serviceRef)}
       />
 

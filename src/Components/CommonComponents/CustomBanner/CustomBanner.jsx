@@ -14,20 +14,24 @@ export default function CustomBanner({
     bgColor,
     bgSize,
     onClick,
-    naviagteToSection
+    naviagteToSection,
+    spanColor,
+    textColor,
+    brClass
 }) {
   return (
     <div>
     <div id={naviagteToSection} className='md:flex selection:bg-zinc-200 selection:text-black'>
       <div className={`w-full md:w-1/2  bg-[#e62f43] text-white bg-[url('https://themes.muffingroup.com/be/accountant4/wp-content/uploads/2022/03/accountan4-section-bg1.png')] bg-no-repeat ${bgSize} ${bgPosition}`}>
-        <div className={`flex flex-wrap justify-center  ${padding}`}>
-        <div className='mb-10 w-1/2 mx-3 text-[17px] lg:text-xl font-bold'>
+        <div className={`flex flex-wrap text-center lg:text-left justify-center  ${padding}`}>
+        <div className='mb-10 w-full md:flex-[0_0_80%] lg:basis-auto lg:w-1/2 mx-3 text-[17px] lg:text-xl font-bold'>
           <h5 className=''>{title}</h5>
         </div>
-        <div className='relative w-1/2 md:mb-[40px]] md:mx-3 leading-7 md:leading-[50px]'>
-          <h2 className={`text-[29px] md:text-[41px] lg:text-5xl font-bold ${spanPosition === 'top' ? 'pt-6' : ''}`}>
+        <div className='w-full md:flex-[0_0_80%] lg:basis-auto lg:w-1/2 md:mb-10 md:mx-3'>
+          <h2 className={`${textColor} text-[29px] md:text-[41px] lg:text-5xl font-bold leading-[30px] md:leading-[43px]`}>
             {heading}
-            <span className={`text-black md:inline xl:text-left absolute ${spanPosition === 'top' ? 'top-[-30px] text-center left-[90px] md:top-[-44px] mt-5 mb-5 md:left-0' : 'bottom-[-35px] md:bottom-[-50px] left-0'}`}>
+            <br className={`${brClass}`} />
+            <span className={`${spanColor} xl:text-left ml-2 `}>
               {headingSpan}
             </span>
           </h2>
